@@ -1,12 +1,11 @@
 import React from "react";
+import Navbar from './sections/navbar.jsx';
 
 const App = () => {
   return(
-    <main className="max-w-7xl max-auto">
-      <h1 className="text-2xl text-white underline">
-        xyz
-      </h1>
-    </main>
+    <main className="max-w-7xl max-auto relative">
+      <Navbar />
+      </main>
   )
 }
 
