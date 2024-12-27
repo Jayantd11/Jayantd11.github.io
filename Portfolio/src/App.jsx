@@ -6,7 +6,7 @@ const App = () => {
     <main className="max-w-7xl max-auto relative">
       <Navbar />
       </main>
-  )
-}
+  );
+};
 
 export default App
