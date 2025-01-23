@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
-  },
+    "preview": "vite preview",
+    "predeploy": "npm run build"
+    },
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.120.4",
