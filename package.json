@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build"
-    },
+    "deploy": "npm run build && gh-pages -d dist"
+  },
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.120.4",
