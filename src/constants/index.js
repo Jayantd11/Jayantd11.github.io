@@ -20,51 +20,16 @@ export const navLinks = [
       href: '#contact',
     },
   ];
-  
-  export const clientReviews = [
-    {
-      id: 1,
-      name: 'Emily Johnson',
-      position: 'Marketing Director at GreenLeaf',
-      img: 'assets/review1.png',
-      review:
-        'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-    },
-    {
-      id: 2,
-      name: 'Mark Rogers',
-      position: 'Founder of TechGear Shop',
-      img: 'assets/review2.png',
-      review:
-        'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
-    },
-    {
-      id: 3,
-      name: 'John Dohsas',
-      position: 'Project Manager at UrbanTech ',
-      img: 'assets/review3.png',
-      review:
-        'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
-    },
-    {
-      id: 4,
-      name: 'Ether Smith',
-      position: 'CEO of BrightStar Enterprises',
-      img: 'assets/review4.png',
-      review:
-        'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-    },
-  ];
-  
+    
   export const myProjects = [
     {
-      title: 'Podcastr - AI Podcast Platform',
-      desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+      title: 'AndroidApiGallery',
+      desc: 'Developed FancyGallery, an Android app featuring a Flickr-integrated photo gallery and interactive map view. Built with Kotlin, MVVM architecture, Jetpack components, Retrofit, Coil, OSMDroid, and Coroutines for seamless performance and user experience.',
       subdesc:
-        'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-      href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+        'December 2024',
+      href: 'https://github.com/Jayantd11/AndroidApiGallery',
       texture: '/textures/project/project1.mp4',
-      logo: '/assets/project-logo1.png',
+      logo: '/assets/android.png',
       logoStyle: {
         backgroundColor: '#2A1816',
         border: '0.2px solid #36201D',
@@ -75,33 +40,23 @@ export const navLinks = [
         {
           id: 1,
           name: 'React.js',
-          path: '/assets/react.svg',
+          path: '/assets/kotlin.png',
         },
         {
           id: 2,
           name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          path: 'assets/java.png',
         },
       ],
     },
     {
-      title: 'LiveDoc - Real-Time Google Docs Clone',
-      desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+      title: 'Personal Server',
+      desc: 'Developed Personal Server, a secure HTTP/1.0 server supporting JWT-based authentication, static file serving, API endpoints, range requests, and robust defenses against path traversal and IDOR vulnerabilities. Designed with modularity, performance, and extensibility in mind.',
       subdesc:
-        'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-      href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+        'December 2024',
+      href: 'https://github.com/Jayantd11/Personal-Server',
       texture: '/textures/project/project2.mp4',
-      logo: '/assets/project-logo2.png',
+      logo: '/assets/server.png',
       logoStyle: {
         backgroundColor: '#13202F',
         border: '0.2px solid #17293E',
@@ -112,33 +67,33 @@ export const navLinks = [
         {
           id: 1,
           name: 'React.js',
-          path: '/assets/react.svg',
+          path: '/assets/java.png',
         },
         {
           id: 2,
           name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
+          path: 'assets/python.png',
         },
         {
           id: 3,
           name: 'TypeScript',
-          path: '/assets/typescript.png',
+          path: '/assets/html.png',
         },
         {
           id: 4,
           name: 'Framer Motion',
-          path: '/assets/framer.png',
+          path: '/assets/css.png',
         },
       ],
     },
     {
-      title: 'CarePulse - Health Management System',
-      desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+      title: 'Personal Cush',
+      desc: 'Designed and implemented cush, a customizable shell with job control (jobs, fg, bg, kill), I/O redirection, pipes, history, and exclusive terminal access. Includes built-in commands like cd and exit, with advanced features for robustness and optimized performance. Added error handling and signal management to improve reliability.',
       subdesc:
-        'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-      href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+        'September 2024.',
+      href: 'https://github.com/Jayantd11/PersonalCush',
       texture: '/textures/project/project3.mp4',
-      logo: '/assets/project-logo3.png',
+      logo: '/assets/cterminal.png',
       logoStyle: {
         backgroundColor: '#60f5a1',
         background:
@@ -151,33 +106,23 @@ export const navLinks = [
         {
           id: 1,
           name: 'React.js',
-          path: '/assets/react.svg',
+          path: '/assets/C.png',
         },
         {
           id: 2,
           name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          path: 'assets/python.png',
         },
       ],
     },
     {
-      title: 'Horizon - Online Banking Platform',
-      desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+      title: 'SkipQuadtree',
+      desc: 'Developed and combined skip lists and quadtree structures to enhance database search efficiency, significantly reducing time complexity. Utilized skip lists for precise entry retrieval, complemented by quadtree traversal for similar searches based on shared parameters. Applied in real-time applications like Google Maps for optimized search functionality.',
       subdesc:
-        'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-      href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+        'February 2024',
+      href: 'https://github.com/Jayantd11/SkipQuadTree',
       texture: '/textures/project/project4.mp4',
-      logo: '/assets/project-logo4.png',
+      logo: '/assets/tree.png',
       logoStyle: {
         backgroundColor: '#0E1F38',
         border: '0.2px solid #0E2D58',
@@ -188,59 +133,7 @@ export const navLinks = [
         {
           id: 1,
           name: 'React.js',
-          path: '/assets/react.svg',
-        },
-        {
-          id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
-        },
-      ],
-    },
-    {
-      title: 'Imaginify - AI Photo Manipulation App',
-      desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-      subdesc:
-        'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-      href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-      texture: '/textures/project/project5.mp4',
-      logo: '/assets/project-logo5.png',
-      logoStyle: {
-        backgroundColor: '#1C1A43',
-        border: '0.2px solid #252262',
-        boxShadow: '0px 0px 60px 0px #635BFF4D',
-      },
-      spotlight: '/assets/spotlight5.png',
-      tags: [
-        {
-          id: 1,
-          name: 'React.js',
-          path: '/assets/react.svg',
-        },
-        {
-          id: 2,
-          name: 'TailwindCSS',
-          path: 'assets/tailwindcss.png',
-        },
-        {
-          id: 3,
-          name: 'TypeScript',
-          path: '/assets/typescript.png',
-        },
-        {
-          id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          path: '/assets/java.png',
         },
       ],
     },
@@ -263,29 +156,29 @@ export const navLinks = [
   export const workExperiences = [
     {
       id: 1,
-      name: 'Framer',
-      pos: 'Lead Web Developer',
-      duration: '2022 - Present',
-      title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-      icon: '/assets/framer.svg',
+      name: 'Virginia Tech',
+      pos: 'Undergraduate Teaching Assistant CS3114',
+      duration: '2025 Jan - Present',
+      title: "Lead problem-solving for students, and facilitate group discussions to promote collaborative learning. Conducted office hours for 8+ hours weekly to reinforce key concepts such as object-oriented design, algorithm analysis, and complexity analysis, ensuring a clear understanding of foundational topics. Lead problem-solving for students, and facilitate group discussions to promote collaborative learning",
+      icon: '/assets/vt.png',
       animation: 'victory',
     },
     {
       id: 2,
-      name: 'Figma',
-      pos: 'Web Developer',
-      duration: '2020 - 2022',
-      title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-      icon: '/assets/figma.svg',
+      name: 'Applica Solutions',
+      pos: 'Data Research Analyst',
+      duration: 'May 2024 - Dec 2022',
+      title: "Coordinated logistics and procurement activities, ensuring efficient flow of IT resources and timely delivery. Supported the IT team, performing hardware and software debugging, maintenance, and troubleshooting tasks. Contributed significantly to website development projects by implementing dynamic content updates and enhancements using JavaScript and React frameworks. Designed and managed fillable forms, improving internal processes for enhanced efficiency and user interaction. Collaborated closely on complex IT projects, gaining practical experience in Java and Python development alongside seasoned professionals.",
+      icon: '/assets/applica.png',
       animation: 'clapping',
     },
     {
       id: 3,
-      name: 'Notion',
-      pos: 'Junior Web Developer',
-      duration: '2019 - 2020',
-      title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-      icon: '/assets/notion.svg',
+      name: 'A Round Entertainment',
+      pos: 'Software Development Intern',
+      duration: 'May 2024 - August 2024',
+      title: "Created webpages using HTML and CSS, ensuring adherence to design specifications and optimizing for SEO. Developed responsive mobile views for iOS and Android platforms using React, enhancing user accessibility and engagement. Integrated front-end components with back-end systems, focusing on efficiency and seamless functionality. Implemented responsive design techniques to ensure consistent user experience across various screen sizes and devices. Engaged in 20+ weekly meetings, offering constructive feedback to peers, fostering continuous improvement, and enhancing collaboration. Demonstrated effective communication skills in providing valuable feedback during team meetings, contributing to a culture of continuous improvement and collaboration.",
+      icon: '/assets/are.jpeg',
       animation: 'salute',
     },
   ];
