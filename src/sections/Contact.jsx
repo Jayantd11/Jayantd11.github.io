@@ -69,8 +69,7 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen w-full object-cover z-0 mb-10" />
-
+        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen w-full object-cover z-0 mb-100" />
         <div className="contact-container mt-10">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
