@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# build output (published to the gh-pages branch, not committed to main)
+dist/
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.local
+
+# env
+.env
+.env.*

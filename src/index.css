@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-ink text-cream font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-magenta text-ink;
+  }
+
+  /* Visible focus ring for keyboard users (native cursor is hidden) */
+  :focus-visible {
+    outline: 2px solid #d174d2;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Custom cursor — only when body.has-cursor (fine pointer, motion allowed) */
+  body.has-cursor,
+  body.has-cursor * {
+    cursor: none !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+    border-radius: 9999px;
+    margin-left: calc(-1 * var(--s, 0px));
+    margin-top: calc(-1 * var(--s, 0px));
+  }
+  .cursor-dot {
+    width: 7px;
+    height: 7px;
+    margin-left: -3.5px;
+    margin-top: -3.5px;
+    background: #e0563f;
+  }
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    border: 1.5px solid rgba(209, 116, 210, 0.7);
+    transition: width 0.25s, height 0.25s, margin 0.25s, background-color 0.25s,
+      border-color 0.25s;
+  }
+  .cursor-ring--active {
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    background: rgba(209, 116, 210, 0.12);
+    border-color: rgba(224, 86, 63, 0.8);
+  }
+
+  /* 3D-tilt project card + cursor-tracking spotlight */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s;
+    will-change: transform;
+  }
+  .card-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(
+      300px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(209, 116, 210, 0.22),
+      transparent 60%
+    );
+  }
+  .tilt-card:hover .card-spotlight {
+    opacity: 1;
+  }
+
+  /* Sticky "panel" stack — sections pin and the next slides over them */
+  .panel {
+    position: sticky;
+    top: 0;
+    background: #1a0f24; /* opaque ink so panels overlap cleanly */
+  }
+  .panel--seam {
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    box-shadow: 0 -30px 60px -20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@layer utilities {
+  /* Gradient-filled text — continuously shifting shimmer */
+  .text-gradient {
+    background-image: linear-gradient(
+      110deg,
+      #d174d2,
+      #e0563f,
+      #f5b5f6,
+      #e0563f,
+      #d174d2
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply text-xs font-display font-semibold uppercase tracking-[0.25em] text-magenta;
+  }
+
+  /* Reveal-on-scroll: starts hidden, .is-visible removes the offset */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mask reveal: each line is clipped, inner slides up into view */
+  .mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em; /* avoid clipping descenders/gradient text */
+  }
+  .mask-inner {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .mask-inner.is-visible {
+    transform: translateY(0);
+  }
+
+  @keyframes scrollcue {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(220%);
+    }
+  }
+
+  /* Marquee row: track is duplicated, so -50% loops seamlessly */
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  /* Bold outlined marquee text — clearly visible, moving band */
+  .marquee-word {
+    -webkit-text-stroke: 1.5px rgba(209, 116, 210, 0.55);
+    color: transparent;
+    transition: color 0.3s, -webkit-text-stroke-color 0.3s;
+  }
+  .marquee-fill {
+    @apply text-gradient;
+  }
+
+  /* Animated mesh-gradient "aurora" backdrop — soft radial color fields that
+     drift. One compositor layer + one modest blur = cheap & smooth, unlike
+     stacking many large blurred elements. */
+  .aurora {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora::before {
+    content: '';
+    position: absolute;
+    inset: -25%;
+    background:
+      radial-gradient(38% 48% at 24% 28%, rgba(209, 116, 210, 0.55), transparent 70%),
+      radial-gradient(32% 42% at 82% 22%, rgba(224, 86, 63, 0.45), transparent 70%),
+      radial-gradient(44% 48% at 62% 82%, rgba(63, 86, 127, 0.6), transparent 72%),
+      radial-gradient(30% 36% at 12% 78%, rgba(209, 116, 210, 0.32), transparent 70%);
+    background-repeat: no-repeat;
+    filter: blur(40px);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    animation: drift 14s ease-in-out infinite alternate;
+  }
+  .aurora--soft::before {
+    opacity: 0.55;
+    filter: blur(50px);
+  }
+  @keyframes drift {
+    0% {
+      transform: translate3d(-6%, -4%, 0) scale(1) rotate(-3deg);
+    }
+    100% {
+      transform: translate3d(8%, 6%, 0) scale(1.25) rotate(6deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aurora::before {
+      animation: none;
+    }
+  }
+
+  /* Subtle film-grain / noise overlay for depth */
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
